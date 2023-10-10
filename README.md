@@ -34,14 +34,14 @@ implementação de clientes síncronos e assíncronos. As Threads serão usadas 
 
 <h2> Códigos </h2>
 
-[Procedimento 1: Criando o Servidor e Cliente de Teste](colocar o link)
+[Procedimento 1: Criando o Servidor e Cliente de Teste](https://github.com/Gregdev22/Missao-5-Mundo-3-/tree/main/Procedimento%201)
 
 * Classe JAVA AQUI
   ``` java
   ```
   <br>
 
-[Procedimento 2: Servidor Completo e Cliente Assíncrono](colocar o link)
+[Procedimento 2: Servidor Completo e Cliente Assíncrono](https://github.com/Gregdev22/Missao-5-Mundo-3-/tree/main/Procedimento%202)
 
 * Classe JAVA AQUI
   ``` java
@@ -49,14 +49,14 @@ implementação de clientes síncronos e assíncronos. As Threads serão usadas 
   <br>
   <hr>
 <h1>Resultados: </h1>
-:triangular_flag_on_post: Procedimento 1: colocar o link
-<img src="" alt="resultado 1" width="1280" height="360">
-<img src="" alt="resultado 2" width="1280" height="360">
+:triangular_flag_on_post: Procedimento 1: https://github.com/Gregdev22/Missao-5-Mundo-3-/tree/main/Procedimento%201
+<img src="https://github.com/Gregdev22/Missao-5-Mundo-3-/blob/main/Procedimento%201/Resultados%20missao%205/1%20proc1%20missao%205.png" alt="resultado 1" width="640" height="360">
+<img src="https://github.com/Gregdev22/Missao-5-Mundo-3-/blob/main/Procedimento%201/Resultados%20missao%205/2%20proc%201%20missao%205.png" alt="resultado 2" width="640" height="360">
 
 <br>
-:triangular_flag_on_post: Procedimento 2: colocar o link
-<img src="" alt="resultado 1" width="1280" height="360">
-<img src="" alt="resultado 2" width="1280" height="360">
+:triangular_flag_on_post: Procedimento 2: (https://github.com/Gregdev22/Missao-5-Mundo-3-/tree/main/Procedimento%202)
+<img src="https://github.com/Gregdev22/Missao-5-Mundo-3-/blob/main/Procedimento%202/Resultados%20missao%205/2%20proc%202%20missao%205.png" alt="resultado 1" width="640" height="360">
+<img src="https://github.com/Gregdev22/Missao-5-Mundo-3-/blob/main/Procedimento%202/Resultados%20missao%205/3%20proc%202%20missao%205.png" alt="resultado 2" width="640" height="640">
 
 <hr>
 
