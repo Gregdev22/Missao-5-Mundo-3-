@@ -698,72 +698,55 @@ public class CadastroThreadv2 extends Thread {
 <h1>Análise e Conclusão</h1>
 <ul>
    <li>
-      Como é organizado um projeto corporativo no NetBeans?  
+      Como funcionam as classes Socket e ServerSocket?  
       <p> 
-        <h4> O projeto corporativo é dividido em um módulo EJB , onde ficam localizadas as classes relativas aos modelos e controles, e um módulo Web, onde ficam os arquivos JSP, HTML e Servlet. 
-        </h4>         
+	É empregado no servidor para aguardar e aceitar conexões vindas da rede. No Socket é utilizado no cliente para estabelecer uma conexão com o servidor.   
       </p>
    </li>
              
    <li>
-     Qual o papel das tecnologias JPA e EJB na construção de um aplicativo para a plataforma Web no ambiente Java?
+     Qual a importância das portas para a conexão com servidores?
       <p> 
-         JPA --> Java Persistence API é responsável por gerenciar a interação com o banco de dados de maneira abstrata. Utilizando JPA, a persistência de dados é executada de maneira orientada a objetos. 
-         EJB --> Enterprise JavaBeans contém a lógica de negócio que atua sobre os dados de negócio.  
+          Permitem que o cliente e o servidor se comuniquem entre si criando um canal identificado, evitando conflitos.
       </p>
    </li>
    
    <li>
-      Como o NetBeans viabiliza a melhoria de produtividade ao lidar com as tecnologias JPA e EJB?
+      Para que servem as classes de entrada e saída ObjectInputStream eObjectOutputStream, e por que os objetos transmitidos devem ser serializáveis?
       <p> 
-          O desenvolvedor pode programar usando apenas conceitos de orientação a objetos, sem se preocupar com conceitos relacionais – como tabelas – ou detalhes do banco de dados.
+        Possibilitam que objetos sejam serializados, ou seja, convertidos em um formato que pode ser transmitido ou armazenado em arquivos. A serialização é essencial para transmitir objetos pela rede ou persisti-los em arquivos, pois transforma os objetos em bytes que podem ser reconstruídos posteriormente. 
       </p>
    </li>
    
    <li>
-     O que são Servlets, e como o NetBeans oferece suporte à construção desse tipo de componentes em um projeto Web? 
+     Por que, mesmo utilizando as classes de entidades JPA no cliente, foi possível garantiro isolamento do acesso ao banco de dados?
       <p> 
-       Servlet (mini-servidor) é um objeto Java que recebe requisições do cliente (request) e produz algo (response), como uma página HTML dinamicamente gerada. 
+	A lógica de acesso ao banco de dados fica à cargo das classes Controllers, que neste caso, existem apenas do lado do Servidor, garantindo assim o isolamento do acesso ao banco de dados.    
       </p>
    </li>
 
    <li>
-     Como funciona o padrão Front Controller, e como ele é implementado em um aplicativo Web Java, na arquitetura MVC?
+	Como as Threads podem ser utilizadas para o tratamento assíncrono das respostasenviadas pelo servidor?   
       <p> 
-       É um padrão arquitetural que se comporta como um controlador tratando todas as solicitações para um site Web e então roteia para uma ação (ou comando). o Front Controller trata todas as chamadas vindas de um site web e é organizado em duas partes: através de um Manipulador Web e uma hierarquia de Comandos. O Manipulador Web é o objeto que efetivamente recebe as solicitações HTTP do tipo POST ou GET do servidor web. Ele extrai as informações necessárias da URL e das solicitações e então decide que tipo de ação iniciar e por fim delega a um objeto Comando para executar a ação. 
+       Através das threads no cliente, é possível atualizar os dados na interface, no caso através da classe SaidaFrame que herda de JDialog, sem que o processo principal seja interrompido e sem que a interface fique bloqueada, permitindo o cliente ficar sempre “ouvindo” as respostas do servidor.
       </p>
    </li>
    <li>
-      Quais as diferenças e semelhanças entre Servlets e JSPs?
+     Para que serve o método invokeLater, da classe SwingUtilities?
       <p> 
-        Ambos possuem uma grande portabilidade, facilidade de programação, flexibilidade e escalabilidade. Em uma página JSP a formatação HTML se encontra separada da programação, podendo ser modificada sem afetar a aplicação de modo mais profundo. Enquanto no Servlet o resultado de uma requisição se mistura lógica de aplicação. 
+       É utilizado para agendar a execução de um trecho de código na Thread de eventos Swing, também conhecida como EDT (Event Dispatch Thread). Essa técnica é essencial para garantir que as operações relacionadas à interface do usuário sejam realizadas na Thread apropriada, prevenindo problemas de concorrência e assegurando a responsividade da interface do usuário em aplicativos Swing.
       </p>
    </li>
     <li>
-     Qual a diferença entre um redirecionamento simples e o uso do método forward, a partir do RequestDispatcher? Para que servem parâmetros e atributos nos objetos HttpRequest?
+    Como os objetos são enviados e recebidos pelo Socket Java?
       <p> 
-        Redirect redireciona o cliente para uma página (sendRedirect) e RequestDispatcher encaminha uma requisição para ser atendida por outro recurso (forward). No primeiro caso (sendRedirect), o cliente receberá uma resposta http em cujo header haverá a informação de que ele deve requisitar outra página, e o browser fará esta requisição. Ou seja, o redirecionamento ocorre no lado no cliente. No segundo caso (forward), no lado do server a requisição do usuário será encaminhada para ser atendida por outro recurso (outro servlet). Este outro servlet eventualmente devolverá outra página para o usuário.  
-
-Os parâmetros são as informações da página submetidos por um formulário, por exemplo. Nesse caso, cada controle de entrada de dados é um parâmetro, e todos eles pertencem à requisição HTTP. Se você submeter dados através do método GET, os parâmetros ficam visíveis na URL no seguinte formato: url?param1=valor1&param2=valor2 etc. 
-Já os atributos são objetos associados a nomes - uma espécie de tabela onde a chave é uma string - que ficam guardados no servidor, associados a um determinado escopo que pode ser de página ( PageContext ), requisição ( HttpServletRequest ), sessão ( HttpSession ) ou aplicação ( ServletContext ). 
+       Para enviar e receber objetos via Socket são utilizadas as classes ObjectInputStream e ObjectOutputStream. Para enviar um objeto, o método writeObject() da classe ObjectOutputStream é chamado passando o objeto que como argumento. Para receber um objeto, o método readObject() da classe ObjectInputStream é chamado. Há outros métodos para envio e recebimento apropriados para cada tipo, por exemplo: writeChar(), writeInt(), writeLong(), readChar(), readInt(), readLong() dentro vários outros.
       </p>
    </li>
        <li>
-       Como o framework Bootstrap é utilizado?
+       Compare a utilização de comportamento assíncrono ou síncrono nos clientes comSocket Java, ressaltando as características relacionadas ao bloqueio doprocessamento.
       <p> 
-        o Bootstrap é um framework CSS para ser utilizado no front-end de aplicações web. Ele utiliza JavaScript e CSS para estilizar as páginas e adicionar funcionalidades atráves de classes específicas adicionadas as tags de um documento html. 
+        No modelo síncrono, as operações de socket bloqueiam o processo do cliente até sua conclusão, o que significa que o cliente fica parado, aguardando a resposta do servidor antes de continuar com outras tarefas. Em contrapartida, no modelo assíncrono, as operações de socket não bloqueiam o processo do cliente, sendo executadas em segundo plano. Isso permite que o cliente prossiga com outras tarefas enquanto aguarda a conclusão das operações de socket, proporcionando maior responsividade ao aplicativo e evitando atrasos no processamento.
       </p>
-   </li>
-       <li>
-       Por que o Bootstrap garante a independência estrutural do HTML?
-      <p> 
-        O Bootstrap apenas altera o estilo da página e adiciona funcionalidades.
-      </p>
-   </li>
-       <li>
-     Qual a relação entre o Boostrap e a responsividade da página?
-      <p> 
-        O uso do Bootstrap visa a possibilidade de acessar o site em qualquer dispositivo, pois ser responsivo é uma de suas principais características. Basicamente, ele trabalha com um sistema de grid que divide a tela em 12 colunas, que facilita a acomodação dos elementos conforme o tamanho da tela do dispositivo. 
-      </p>
-   </li>
+   </li>      
 </ul>
